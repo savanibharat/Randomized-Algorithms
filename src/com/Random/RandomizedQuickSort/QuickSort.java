@@ -93,6 +93,7 @@ class QuickSort {
 			long pivot = theArray[right]; // rightmost item
 											// partition range
 			int partition = partitionIt(left, right, pivot);
+			
 			recQuickSort(left, partition - 1); // sort left side
 			recQuickSort(partition + 1, right); // sort right side
 
@@ -138,8 +139,8 @@ class QuickSort {
 	/**
 		 * Swap.
 		 *
-		 * @param dex1 the dex1
-		 * @param dex2 the dex2
+		 * @param a
+		 * @param b
 		 */
 		public void swap(int a, int b) // swap two elements
 	{
