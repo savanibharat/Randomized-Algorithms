@@ -10,7 +10,7 @@ class QuickSort {
 	
 	/** The array. */
 	private long[] theArray; // ref to array theArray
-	
+	static int cntr=0;
 	/** The n elems. */
 	private int nElems; // number of data items
 
@@ -54,7 +54,7 @@ class QuickSort {
 			// for each element,
 			System.out.print(theArray[j] + " "); // display it
 		System.out.println("");
-
+		System.out.println(cntr);
 	}
 
 	// --------------------------------------------------------------
@@ -91,7 +91,7 @@ class QuickSort {
 			swap(pivotIndex, right);
 
 			long pivot = theArray[right]; // rightmost item
-											// partition range
+			cntr++;								// partition range
 			int partition = partitionIt(left, right, pivot);
 			
 			recQuickSort(left, partition - 1); // sort left side
@@ -115,13 +115,13 @@ class QuickSort {
 		int rightPtr = right; // right-1 (after --)
 
 		while (true) { // find bigger item
-
-			while (theArray[++leftPtr] < pivot)
-				; // (nop)
+cntr++;
+			while (theArray[++leftPtr] < pivot){cntr++;}
+				//; // (nop)
 					// find smaller item
 
-			while (rightPtr > 0 && theArray[--rightPtr] > pivot)
-				; // (nop)
+			while (rightPtr > 0 && theArray[--rightPtr] > pivot){{cntr++;}}
+				//; // (nop)
 
 			if (leftPtr >= rightPtr) // if pointers cross,
 				break; // partition done
