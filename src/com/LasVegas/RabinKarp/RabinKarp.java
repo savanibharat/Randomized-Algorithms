@@ -45,9 +45,9 @@ public class RabinKarp {
 	}
 
 	// Monte Carlo version: always return true
-	private boolean check(int i) {
+	/*private boolean check(int i) {
 		return true;
-	}
+	}*/
 
 	// check for exact match
 	public int search(String txt) {
@@ -86,9 +86,6 @@ public class RabinKarp {
 	public static void main(String[] args) {
 		String pat = "abcd"; // args[0];
 		String txt = "abcdkjdhfdkjsabcd";// args[1];
-
-		char[] pattern = pat.toCharArray();
-		char[] text = txt.toCharArray();
 
 		RabinKarp searcher = new RabinKarp(pat);
 		int offset = searcher.search(txt);
