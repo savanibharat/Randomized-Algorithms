@@ -13,7 +13,7 @@ public class QuickSortApp {
 	 */
 	public static void main(String[] args) {
 
-		int maxSize = 30; 
+		int maxSize = 100; 
 		QuickSort arr;
 		arr = new QuickSort(maxSize); 
 
@@ -25,11 +25,11 @@ public class QuickSortApp {
 
 		}
 		arr.display(); 
-		
+		long start=System.nanoTime();
 		arr.quickSort();
-		
+		long end=System.nanoTime();
 		arr.display(); 
-
+		System.out.println("time taken is "+(end-start));
 	}
 
 }
